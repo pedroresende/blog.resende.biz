@@ -1,3 +1,15 @@
+<script setup lang="ts">
+useHead({
+  titleTemplate: '%s | Blog.resende.biz',
+  meta: [
+    {
+      name: 'description',
+      content: 'Blog Resende',
+    },
+  ]
+})
+</script>
+
 <template>
   <div>
     <NuxtPage />

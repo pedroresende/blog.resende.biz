@@ -1,5 +1,16 @@
 <script setup lang="ts">
 const posts = await queryContent().sort({ date: -1 }).find()
+
+useHead({
+  title: "Home",
+  meta: [
+    {
+      name: "description",
+      content: "Blog Resende",
+    },
+  ],
+})
+
 </script>
 
 <template>

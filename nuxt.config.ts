@@ -24,18 +24,11 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
-    prerender: {
-      crawlLinks: true,
-      routes: ["/"],
-      ignore: ["/api"],
-    },
+    preset: "service-worker",
   },
   content: {
     navigation: {
       fields: ["title", "publishedAt"],
-    },
-    experimental: {
-      search: true,
     },
   },
 });

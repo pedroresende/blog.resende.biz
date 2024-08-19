@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-
 const getTags = (tags: string[]) => {
   return tags.map(tag => `#${tag}`).join(' ')
 }
