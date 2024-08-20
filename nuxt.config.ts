@@ -13,7 +13,15 @@ export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
-  modules: ["@nuxt/content", "@nuxt/image", "nuxt-disqus"],
+  modules: [
+    "@nuxt/content",
+    "@nuxt/image",
+    "nuxt-disqus",
+    "nuxt-delay-hydration",
+  ],
+  delayHydration: {
+    debug: process.env.node === "development",
+  },
   disqus: {
     shortname: "blogresendebiz",
   },
