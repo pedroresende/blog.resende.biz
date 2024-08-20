@@ -1,5 +1,8 @@
 <script setup lang="ts">
 useHead({
+  htmlAttrs: {
+    lang: 'en',
+  },
   titleTemplate: '%s | Blog.resende.biz',
   meta: [
     {

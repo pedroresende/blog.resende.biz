@@ -21,17 +21,22 @@ useHead({
       <Header />
       <section class="space-y-4 divide-y bg-gray-100 px-6 ">
         <article v-for="post of posts" :key="post.slug" class="pt-4 mx-4 lg:mx-0">
-          <h2 class="text-xl mb-2 text-gray-500 hover:text-blue-800">
+          <h2 class="text-xl mb-2">
             <nuxt-link :to="`${post.permalink}`" class="hover:text-green-700">
               {{ post.title }}
             </nuxt-link>
           </h2>
-          <h3 class="text-sm text-gray-300 dark:text-gray-400">
+          <h3 class="text-sm text-gray-600">
             {{ post.date.split('T')[0].replaceAll('-', '/') }}
           </h3>
           <span class="text">
             {{ post.description }}
           </span>
+          <p class="text-sm text-gray-700 hover:text-green-700 mt-2">
+            <nuxt-link :to="`${post.permalink}`" title="Read more">
+              Read more >
+            </nuxt-link>
+          </p>
         </article>
       </section>
     </main>

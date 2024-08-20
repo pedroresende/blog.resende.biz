@@ -19,9 +19,9 @@ onMounted(() => {
       <Header />
       <ContentDoc>
         <template v-slot="{ doc }">
-          <article class="px-6 py-24 mx-auto space-y-12 dark:bg-gray-100 dark:text-gray-900">
+          <article class="px-6 lg:py-24 mx-auto space-y-12 dark:bg-gray-100 dark:text-gray-900">
             <div class="w-full mx-auto space-y-4 text-center">
-              <!-- <p class="text-xs font-semibold tracking-wider uppercase">{{ getTags(doc.tags) }}</p> -->
+              <p class="text-xs font-semibold tracking-wider uppercase">{{ getTags(doc.tags) }}</p>
               <h1 class="text-4xl font-bold leading-tight md:text-5xl">{{ doc.title }}</h1>
               <p class="text-sm">por
                 <a rel="noopener noreferrer" href="https://www.pedro.resende.biz" target="_blank"

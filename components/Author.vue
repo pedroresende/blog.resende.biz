@@ -7,7 +7,7 @@ const props = defineProps(['author'])
   <div class="pt-12 border-t dark:border-gray-300">
     <div class="flex space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
       <img src="/favicon-96x96.png" :alt="props.author.name"
-        class="flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-300">
+        class="flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-300 mr-3">
       <div class="flex flex-col">
         <h4 class="text-lg font-semibold">{{ props?.author?.name }}</h4>
         <p class="dark:text-gray-600 mb-4">

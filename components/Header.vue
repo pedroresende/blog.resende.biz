@@ -1,6 +1,6 @@
 <template>
   <header class="p-4 bg-gray-100 text-gray-800">
-    <div class="container flex justify-between h-16 mx-auto">
+    <div class="container flex justify-between h-16 ml-4 lg:mx-auto">
       <nuxt-link rel="noopener noreferrer" to="/" aria-label="Back to homepage" class="flex items-center p-2 text-4xl">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px"
           viewBox="0 0 64 64" aria-hidden="true" role="img" class="iconify iconify--emojione-monotone"
