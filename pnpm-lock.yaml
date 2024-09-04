@@ -23,6 +23,9 @@ importers:
       prismjs:
         specifier: ^1.29.0
         version: 1.29.0
+      sitemap:
+        specifier: ^8.0.0
+        version: 8.0.0
       vue:
         specifier: latest
         version: 3.4.38
@@ -30,9 +33,6 @@ importers:
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.41)
-      nuxt-disqus:
-        specifier: ^1.0.1
-        version: 1.0.1(magicast@0.3.4)(rollup@4.20.0)
       postcss:
         specifier: ^8.4.41
         version: 8.4.41
@@ -1029,11 +1029,17 @@ packages:
   '@types/ms@0.7.34':
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
 
+  '@types/node@17.0.45':
+    resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
+
   '@types/node@22.4.0':
     resolution: {integrity: sha512-49AbMDwYUz7EXxKU/r7mXOsxwFr4BYbvB7tWYxVuLdb2ibd30ijjXINSMAHiEEZk5PCRBmW1gUeisn2VMKt3cQ==}
 
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
+
+  '@types/sax@1.2.7':
+    resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
@@ -2668,9 +2674,6 @@ packages:
   nuxt-delay-hydration@1.3.6:
     resolution: {integrity: sha512-Y/LEzk0HLzROsOB0MeVLPEODr/UVGVWNKxyr4HrZF/I/x2bdAFNMJYKjdQ8bzx4CBkSOMlhDgk3ApMfqM8OB+Q==}
 
-  nuxt-disqus@1.0.1:
-    resolution: {integrity: sha512-audsnAo2fXuhZFCOAcoYogwpIAs/xTfi+pUK0aarnEbiV5cFIFnITtN6u0KAqntISZBvZUzOqxoqzPjodYoMjA==}
-
   nuxt@3.12.4:
     resolution: {integrity: sha512-/ddvyc2kgYYIN2UEjP8QIz48O/W3L0lZm7wChIDbOCj0vF/yLLeZHBaTb3aNvS9Hwp269nfjrm8j/mVxQK4RhA==}
     engines: {node: ^14.18.0 || >=16.10.0}
@@ -3173,6 +3176,9 @@ packages:
   safe-buffer@5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
 
+  sax@1.4.1:
+    resolution: {integrity: sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg==}
+
   scule@1.3.0:
     resolution: {integrity: sha512-6FtHJEvt+pVMIB9IBY+IcCJ6Z5f1iQnytgyfKMhDKgmzYG+TeH/wx1y3l27rshSbLiSanrR9ffZDrEsmjlQF2g==}
 
@@ -3248,6 +3254,11 @@ packages:
 
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
+
+  sitemap@8.0.0:
+    resolution: {integrity: sha512-+AbdxhM9kJsHtruUF39bwS/B0Fytw6Fr1o4ZAIAEqA6cke2xcoO2GleBw9Zw7nRzILVEgz7zBM5GiTJjie1G9A==}
+    engines: {node: '>=14.0.0', npm: '>=6.0.0'}
+    hasBin: true
 
   skin-tone@2.0.0:
     resolution: {integrity: sha512-kUMbT1oBJCpgrnKoSr0o6wPtvRWT9W9UKvGLwfJYO2WuahZRHOpEyL1ckyMGgMWh0UdpmaoFqKKD29WTomNEGA==}
@@ -3764,9 +3775,6 @@ packages:
     resolution: {integrity: sha512-sv6wmNKx2j3aqJQDMxLFzs/u/mjA9Z5LCgy6BE0f7yFWMjrPLnS/sPNn8ARY/FXw6byV18EFutn5lTO6+UsV5A==}
     peerDependencies:
       vue: ^3.2.0
-
-  vue3-disqus@1.0.6:
-    resolution: {integrity: sha512-IfYHMqVklVEZVOUuQo3pjD/+I40ajph4mMfiBZdxHnGvuFO+ZEB3QjSF8e6VVVYcMWf5Tvbl6AfdLdwwRzdW5w==}
 
   vue@3.4.38:
     resolution: {integrity: sha512-f0ZgN+mZ5KFgVv9wz0f4OgVKukoXtS3nwET4c2vLBGQR50aI8G0cqbFtLlX9Yiyg3LFGBitruPHt2PxwTduJEw==}
@@ -4948,11 +4956,17 @@ snapshots:
 
   '@types/ms@0.7.34': {}
 
+  '@types/node@17.0.45': {}
+
   '@types/node@22.4.0':
     dependencies:
       undici-types: 6.19.6
 
   '@types/resolve@1.20.2': {}
+
+  '@types/sax@1.2.7':
+    dependencies:
+      '@types/node': 22.4.0
 
   '@types/unist@2.0.11': {}
 
@@ -7019,17 +7033,6 @@ snapshots:
       - rollup
       - supports-color
 
-  nuxt-disqus@1.0.1(magicast@0.3.4)(rollup@4.20.0):
-    dependencies:
-      '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.20.0)
-      defu: 6.1.4
-      vue3-disqus: 1.0.6
-    transitivePeerDependencies:
-      - magicast
-      - rollup
-      - supports-color
-      - typescript
-
   nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@22.4.0)(ioredis@5.4.1)(magicast@0.3.4)(rollup@4.20.0)(terser@5.31.6)(vite@5.4.1(@types/node@22.4.0)(terser@5.31.6)):
     dependencies:
       '@nuxt/devalue': 2.0.2
@@ -7709,6 +7712,8 @@ snapshots:
 
   safe-buffer@5.2.1: {}
 
+  sax@1.4.1: {}
+
   scule@1.3.0: {}
 
   semver@6.3.1: {}
@@ -7813,6 +7818,13 @@ snapshots:
       totalist: 3.0.1
 
   sisteransi@1.0.5: {}
+
+  sitemap@8.0.0:
+    dependencies:
+      '@types/node': 17.0.45
+      '@types/sax': 1.2.7
+      arg: 5.0.2
+      sax: 1.4.1
 
   skin-tone@2.0.0:
     dependencies:
@@ -8397,12 +8409,6 @@ snapshots:
     dependencies:
       '@vue/devtools-api': 6.6.3
       vue: 3.4.38
-
-  vue3-disqus@1.0.6:
-    dependencies:
-      vue: 3.4.38
-    transitivePeerDependencies:
-      - typescript
 
   vue@3.4.38:
     dependencies:
