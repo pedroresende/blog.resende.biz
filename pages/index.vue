@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { onMounted } from "vue"
+
 const posts = await queryContent().sort({ date: -1 }).find()
 
 useHead({
@@ -10,13 +12,10 @@ useHead({
     },
   ],
 })
-
 </script>
 
 <template>
-  <div
-    class="max-w-5xl min-h-screen flex justify-center mx-auto mb-12"
-  >
+  <div class="max-w-5xl min-h-screen flex justify-center mx-auto">
     <main class="w-full">
       <Header />
       <section class="space-y-4 divide-y bg-gray-100 px-6 ">
@@ -39,6 +38,7 @@ useHead({
           </p>
         </article>
       </section>
+      <Footer />
     </main>
   </div>
 </template>
