@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     domains: ["blog.resende.biz"]
   },
   compatibilityDate: "2024-04-03",
-  // ssr: false,
+  ssr: false,
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
   modules: [
@@ -45,11 +45,9 @@ export default defineNuxtConfig({
     prerender: {
       autoSubfolderIndex: false,
       routes: ["/sitemap.xml"]
-    }
+    },
+    preset: "service-worker",
   },
-  // nitro: {
-  // preset: "service-worker",
-  // },
   content: {
     navigation: {
       fields: ["title", "publishedAt"]
