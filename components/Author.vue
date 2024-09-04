@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const props = defineProps(['author'])
-
 </script>
 
 <template>
