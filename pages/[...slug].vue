@@ -19,14 +19,14 @@ const resetDisqus = () => {
 onMounted(() => {
   const { $Prism } = useNuxtApp()
   $Prism.highlightAll()
-  ; (function () {
+  ;(function () {
     // DON'T EDIT BELOW THIS LINE
     var d = document,
       s = d.createElement("script")
     s.src = `https://${runtimeConfig.public.disqus.shortname}.disqus.com/embed.js`
     s.setAttribute("identifier", route.params.slug)
     s.setAttribute("url", `https://blog.resende.biz/${route.params.slug}`)
-      ; (d.head || d.body).appendChild(s)
+    ;(d.head || d.body).appendChild(s)
   })()
   resetDisqus()
 })
@@ -38,7 +38,9 @@ onMounted(() => {
       <Header />
       <ContentDoc>
         <template v-slot="{ doc }">
-          <article class="px-6 lg:py-24 mx-auto space-y-12 dark:bg-gray-100 dark:text-gray-900">
+          <article
+            class="px-6 lg:py-24 mx-auto space-y-12 dark:bg-gray-100 dark:text-gray-900"
+          >
             <div class="w-full mx-auto space-y-4 text-center">
               <p class="text-xs font-semibold tracking-wider uppercase">
                 {{ getTags(doc.tags) }}
@@ -48,18 +50,26 @@ onMounted(() => {
               </h1>
               <p class="text-sm">
                 por
-                <a rel="noopener noreferrer" href="https://www.pedro.resende.biz" target="_blank"
-                  class="underline text-green-700">
+                <a
+                  rel="noopener noreferrer"
+                  href="https://www.pedro.resende.biz"
+                  target="_blank"
+                  class="underline text-green-700"
+                >
                   <span itemprop="name">{{ doc.author.name }}</span>
                 </a>
                 em
                 <time datetime="2021-02-12 15:34:18-0200">{{
                   doc.date.split("T")[0].replaceAll("-", "/")
-                  }}</time>
+                }}</time>
               </p>
             </div>
             <div v-if="doc.coverImage">
-              <img :src="doc.coverImage" :alt="doc.title" class="w-full h-96 object-cover" />
+              <img
+                :src="doc.coverImage"
+                :alt="doc.title"
+                class="w-full h-96 object-cover"
+              />
             </div>
             <div class="dark:text-gray-800">
               <p class="overflow-x-auto [&>*]:whitespace-pre [&>*]:text-wrap">

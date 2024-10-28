@@ -3,5 +3,5 @@
     <div class="container flex justify-between ml-4 lg:mx-auto">
       <Author :author="{ name: 'Pedro Resende' }" />
     </div>
-    </footer>
+  </footer>
 </template>
