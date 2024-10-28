@@ -26,7 +26,7 @@ const loadMorePosts = () => {
         <article
           v-for="(post, index) in posts"
           :key="post.slug"
-          v-if="index <= numberOfPosts"
+          v-show="index <= numberOfPosts"
           class="pt-4 mx-4 lg:mx-0"
         >
           <h2 class="text-xl mb-2">
