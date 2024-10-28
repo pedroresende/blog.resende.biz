@@ -24,14 +24,10 @@ export default defineNuxtConfig({
     domains: ["blog.resende.biz"]
   },
   compatibilityDate: "2024-04-03",
-  ssr: true,
+  ssr: false,
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
-  modules: [
-    "@nuxt/content",
-    "@nuxt/image",
-    "nuxt-delay-hydration"
-  ],
+  modules: ["@nuxt/content", "@nuxt/image", "nuxt-delay-hydration"],
   delayHydration: {
     debug: process.env.node === "development"
   },
@@ -46,11 +42,11 @@ export default defineNuxtConfig({
       autoSubfolderIndex: false,
       routes: ["/sitemap.xml"]
     },
-    preset: "vercel-edge",
+    preset: "service-worker"
   },
   content: {
     navigation: {
       fields: ["title", "publishedAt"]
-    },
+    }
   }
 })
