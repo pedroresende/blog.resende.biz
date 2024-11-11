@@ -4,7 +4,9 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
-          src: "https://blogresendebiz.disqus.com/embed.js"
+          src: "https://blogresendebiz.disqus.com/embed.js",
+          async: true,
+          defer: true
         }
       ]
     },
