@@ -33,8 +33,7 @@ export default defineNuxtConfig({
     prerender: {
       autoSubfolderIndex: false,
       routes: ["/sitemap.xml"]
-    },
-    preset: "service-worker"
+    }
   },
   content: {
     navigation: {

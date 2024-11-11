@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/_nuxt/*",
+    "/.DS_Store",
+    "/favicon-96x96.png",
+    "/favicon-96x96.webp",
+    "/favicon.ico",
+    "/robots.txt",
+    "/sitemap.xml"
+  ]
+}
