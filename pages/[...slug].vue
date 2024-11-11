@@ -19,15 +19,7 @@ const resetDisqus = () => {
 onMounted(() => {
   const { $Prism } = useNuxtApp()
   $Prism.highlightAll()
-  ;(function () {
-    // DON'T EDIT BELOW THIS LINE
-    var d = document,
-      s = d.createElement("script")
-    s.src = `https://${runtimeConfig.public.disqus.shortname}.disqus.com/embed.js`
-    s.setAttribute("identifier", route.params.slug)
-    s.setAttribute("url", `https://blog.resende.biz/${route.params.slug}`)
-    ;(d.head || d.body).appendChild(s)
-  })()
+
   resetDisqus()
 })
 </script>

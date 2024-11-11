@@ -1,13 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  runtimeConfig: {
-    public: {
-      disqus: {
-        shortname: "blogresendebiz"
-      }
-    }
-  },
   app: {
+    head: {
+      script: [
+        {
+          src: "https://blogresendebiz.disqus.com/embed.js"
+        }
+      ]
+    },
     pageTransition: {
       name: "page",
       mode: "out-in"
