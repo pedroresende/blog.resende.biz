@@ -1,9 +1,25 @@
 <script lang="ts" setup>
 import { onMounted } from "vue"
 const route = useRoute()
-const runtimeConfig = useRuntimeConfig()
 
 const getTags = (tags: string[]) => tags?.map((tag) => `#${tag}`).join(" ")
+
+useHead({
+  meta: [
+    {
+      hid: "description",
+      name: "description",
+      content: route.params.slug
+    }
+  ],
+  script: [
+    {
+      src: "https://blogresendebiz.disqus.com/embed.js",
+      async: true,
+      defer: true
+    }
+  ]
+})
 
 const resetDisqus = () => {
   if (!window.DISQUS) return
