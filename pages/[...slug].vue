@@ -89,7 +89,17 @@ onMounted(() => {
           </article>
         </template>
         <template #not-found>
-          <h1>Document not found</h1>
+          <article
+            class="px-6 lg:py-24 mx-auto space-y-12 dark:bg-gray-100 dark:text-gray-900"
+          >
+            <h1
+              class="text-4xl font-bold leading-tight md:text-5xl text-center"
+            >
+              404 - Document not found
+            </h1>
+            <div id="disqus_thread"></div>
+            <Author author="Pedro Resende" />
+          </article>
         </template>
       </ContentDoc>
     </main>
