@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { cleanUpDate } from "~/lib/cleanUpDate"
 export interface Post {
   slug: string
   title: string
@@ -25,7 +26,7 @@ const filteredPosts = computed(() => {
       </nuxt-link>
     </h2>
     <h3 class="text-sm text-gray-600">
-      {{ post.date.split("T")[0].replaceAll("-", "/") }}
+      {{ cleanUpDate(post.date) }}
     </h3>
     <span class="text">
       {{ post.description }}

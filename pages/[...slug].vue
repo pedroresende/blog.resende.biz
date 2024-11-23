@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { onMounted } from "vue"
+import { cleanUpDate } from "~/lib/cleanUpDate"
 const route = useRoute()
 
 const getTags = (tags: string[]) => tags?.map((tag) => `#${tag}`).join(" ")
@@ -67,9 +68,7 @@ onMounted(() => {
                   <span itemprop="name">{{ doc.author.name }}</span>
                 </a>
                 em
-                <time datetime="2021-02-12 15:34:18-0200">{{
-                  doc.date.split("T")[0].replaceAll("-", "/")
-                }}</time>
+                {{ cleanUpDate(doc.date) }}
               </p>
             </div>
             <div v-if="doc.coverImage">
