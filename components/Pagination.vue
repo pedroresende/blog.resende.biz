@@ -6,7 +6,7 @@ const emit = defineEmits(["loadMorePosts"])
   <div class="w-full text-center">
     <button
       @click="emit('loadMorePosts')"
-      class="p-2 rounded-md hover:dark:text-green-700 hover:bg-inherit border mt-4 bg-green-700 text-white"
+      class="p-2 rounded-md dark:hover:text-green-700 hover:bg-inherit border mt-4 bg-green-700 text-white"
     >
       Carregar Mais Posts
     </button>

@@ -8,7 +8,7 @@ const props = defineProps(["author"])
       <img
         src="/favicon-96x96.webp"
         :alt="props.author.name"
-        class="flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-300 mr-3"
+        class="shrink-0 w-24 h-24 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-300 mr-3"
       />
       <div class="flex flex-col">
         <h4 class="text-lg font-semibold">{{ props?.author?.name }}</h4>
@@ -34,7 +34,7 @@ const props = defineProps(["author"])
         rel="noopener noreferrer"
         href="https://github.com/pedroresende"
         aria-label="GitHub"
-        class="p-2 rounded-md dark:text-gray-800 hover:dark:text-green-700"
+        class="p-2 rounded-md dark:text-gray-800 dark:hover:text-green-700"
       >
         <svg
           fill="currentColor"
@@ -53,7 +53,7 @@ const props = defineProps(["author"])
         rel="noopener noreferrer"
         href="https://x.com/pmmresende"
         aria-label="X"
-        class="p-2 rounded-md dark:text-gray-800 hover:dark:text-green-700"
+        class="p-2 rounded-md dark:text-gray-800 dark:hover:text-green-700"
       >
         <svg
           fill="currentColor"
@@ -69,7 +69,7 @@ const props = defineProps(["author"])
         </svg>
       </a>
       <a
-        class="p-2 rounded-md dark:text-gray-800 hover:dark:text-green-700"
+        class="p-2 rounded-md dark:text-gray-800 dark:hover:text-green-700"
         aria-label="linkedin"
         rel="noopener noreferrer"
         target="_blank"

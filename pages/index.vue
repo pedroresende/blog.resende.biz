@@ -5,7 +5,6 @@ const numberOfPosts = ref(10)
 const posts = (await queryContent()
   .sort({ date: -1 })
   .find()) as unknown as Post[]
-
 useHead({
   title: "Home",
   meta: [

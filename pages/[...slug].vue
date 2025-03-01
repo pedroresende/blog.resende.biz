@@ -79,7 +79,7 @@ onMounted(() => {
               />
             </div>
             <div class="dark:text-gray-800">
-              <p class="overflow-x-auto [&>*]:whitespace-pre [&>*]:text-wrap">
+              <p class="overflow-x-auto *:whitespace-pre *:text-wrap">
                 <ContentRenderer :value="doc" />
               </p>
             </div>
