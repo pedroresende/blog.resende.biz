@@ -3,6 +3,14 @@ import tailwindcss from "@tailwindcss/vite"
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
+    head: {
+      meta: [
+        {
+          name: "google-site-verification",
+          content: "z-WmJHNUAoibdq5ifYvXqoUtMySomvIOL05IEFn6pv0"
+        }
+      ]
+    },
     pageTransition: {
       name: "page",
       mode: "out-in"
