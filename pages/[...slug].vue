@@ -14,30 +14,30 @@ useHead({
     }
   ],
   script: [
-    {
-      src: "https://blogresendebiz.disqus.com/embed.js",
-      async: true,
-      defer: true
-    }
+    // {
+    //   src: "https://blogresendebiz.disqus.com/embed.js",
+    //   async: true,
+    //   defer: true
+    // }
   ]
 })
 
-const resetDisqus = () => {
-  if (!window.DISQUS) return
-  DISQUS.reset({
-    reload: true,
-    config: function () {
-      this.page.identifier = `${route.params.slug}`
-      this.page.url = `https://blog.resende.biz/${route.params.slug}`
-    }
-  })
-}
+// const resetDisqus = () => {
+//   if (!window.DISQUS) return
+//   DISQUS.reset({
+//     reload: true,
+//     config: function () {
+//       this.page.identifier = `${route.params.slug}`
+//       this.page.url = `https://blog.resende.biz/${route.params.slug}`
+//     }
+//   })
+// }
 
 onMounted(() => {
   const { $Prism } = useNuxtApp()
   $Prism.highlightAll()
 
-  resetDisqus()
+  // resetDisqus()
 })
 </script>
 
