@@ -1,16 +1,17 @@
-import { serverQueryContent } from "#content/server"
 import { SitemapStream, streamToPromise } from "sitemap"
 
 export default defineEventHandler(async (event) => {
-  // Fetch all documents
-  const docs = await serverQueryContent(event).find()
+  const docs = await queryCollection(event, "content")
+    .order("meta", "DESC")
+    .all()
+
   const sitemap = new SitemapStream({
     hostname: "https://blog.resende.biz"
   })
 
   for (const doc of docs) {
     sitemap.write({
-      url: doc._path,
+      url: doc.meta.permalink,
       changefreq: "monthly"
     })
   }

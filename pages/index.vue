@@ -2,9 +2,12 @@
 import { ref } from "vue"
 import type { Post } from "~/components/PostList.vue"
 const numberOfPosts = ref(10)
-const posts = (await queryContent()
-  .sort({ date: -1 })
-  .find()) as unknown as Post[]
+
+const { data: posts } = (await useAsyncData(() =>
+  // @ts-expect-error
+  queryCollection("content").order("meta", "DESC").all()
+)) as unknown as { data: Post[] }
+
 useHead({
   title: "Home",
   meta: [

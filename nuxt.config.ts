@@ -46,10 +46,5 @@ export default defineNuxtConfig({
       autoSubfolderIndex: false,
       routes: ["/sitemap.xml"]
     }
-  },
-  content: {
-    navigation: {
-      fields: ["title", "publishedAt"]
-    }
   }
 })
