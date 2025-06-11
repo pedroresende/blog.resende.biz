@@ -1,14 +1,14 @@
 <script setup lang="ts">
 useHead({
   htmlAttrs: {
-    lang: 'en',
+    lang: "en"
   },
-  titleTemplate: '%s | Blog.resende.biz',
+  titleTemplate: "%s | Blog.resende.biz",
   meta: [
     {
-      name: 'description',
-      content: 'Blog Resende',
-    },
+      name: "description",
+      content: "Blog Resende"
+    }
   ]
 })
 </script>
@@ -21,7 +21,6 @@ useHead({
 </template>
 
 <style>
-.page-enter-active,
 .page-enter-active {
   transition: all 0.5s;
 }
