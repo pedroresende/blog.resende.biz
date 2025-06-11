@@ -32,12 +32,7 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()]
   },
   css: ["~/assets/css/main.css"],
-  modules: [
-    "@nuxt/content",
-    "@nuxt/image",
-    "nuxt-delay-hydration",
-    "@nuxthq/studio"
-  ],
+  modules: ["@nuxt/content", "@nuxt/image", "nuxt-delay-hydration"],
   delayHydration: {
     debug: process.env.node === "development"
   },
@@ -45,6 +40,11 @@ export default defineNuxtConfig({
     prerender: {
       autoSubfolderIndex: false,
       routes: ["/sitemap.xml"]
+    }
+  },
+  content: {
+    preview: {
+      api: "https://api.nuxt.studio"
     }
   }
 })
