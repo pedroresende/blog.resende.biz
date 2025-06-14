@@ -24,38 +24,19 @@ const { data: doc } = await useAsyncData(route.path, () => {
 })
 
 useHead({
+  title: doc.value.title,
   meta: [
     {
       hid: "description",
       name: "description",
-      content: (doc as unknown as Content)?.meta?.title
+      content: doc.value.title
     }
   ]
-  // script: [
-  //   {
-  //     src: "https://blogresendebiz.disqus.com/embed.js",
-  //     async: true,
-  //     defer: true
-  //   }
-  // ]
 })
-
-// const resetDisqus = () => {
-//   if (!window.DISQUS) return
-//   DISQUS.reset({
-//     reload: true,
-//     config: function () {
-//       this.page.identifier = `${route.params.slug}`
-//       this.page.url = `https://blog.resende.biz/${route.params.slug}`
-//     }
-//   })
-// }
 
 onMounted(() => {
   const { $Prism } = useNuxtApp()
   $Prism.highlightAll()
-
-  // resetDisqus()
 })
 </script>
 
@@ -97,7 +78,7 @@ onMounted(() => {
           />
         </div>
         <ContentRenderer :value="doc" />
-        <div id="disqus_thread"></div>
+        <DisqusComments identifier="{{route.params.slug}}" />
         <Author :author="doc?.meta.author" />
       </article>
       <article
@@ -107,7 +88,7 @@ onMounted(() => {
         <h1 class="text-4xl font-bold leading-tight md:text-5xl text-center">
           404 - Documento não encontrado
         </h1>
-        <div id="disqus_thread"></div>
+        <DisqusComments identifier="{{route.params.slug}}" />
         <Author author="Pedro Resende" />
       </article>
     </main>
