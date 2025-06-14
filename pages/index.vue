@@ -4,7 +4,6 @@ import type { Post } from "~/components/PostList.vue"
 const numberOfPosts = ref(10)
 
 const { data: posts } = (await useAsyncData(() =>
-  // @ts-expect-error
   queryCollection("content").order("meta", "DESC").all()
 )) as unknown as { data: Post[] }
 

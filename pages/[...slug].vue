@@ -19,7 +19,6 @@ interface Content {
 }
 
 const { data: doc } = await useAsyncData(route.path, () => {
-  // @ts-expect-error
   return queryCollection<any>("content").path(route.path).first()
 })
 
