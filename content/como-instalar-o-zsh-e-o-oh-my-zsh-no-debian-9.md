@@ -15,7 +15,7 @@ tags:
   - zsh
 ---
 
-Hoje vou-vos deixar aqui um pequeno tutorial a explicar como podem instalar o [ZSH](https://en.wikipedia.org/wiki/Z_shell){rel="noreferrer,noopener"} (Z Shell) no terminal. 
+Hoje vou-vos deixar aqui um pequeno tutorial a explicar como podem instalar o [ZSH](https://en.wikipedia.org/wiki/Z_shell) (Z Shell) no terminal. 
 Para quem não sabe o que é o o ZSH, devem saber que se trata de uma shell um pouco diferente do tão bem conhecido bash, consola por defeito instalada na maioria dos sistemas linux.
 
 Vamos começar por actualizar os repositórios de pacotes de linux
@@ -44,7 +44,7 @@ chsh -s $(which zsh) &lt;- Zsh Default shell
 <br /><em>- </em>chsh -s $(which zsh) &lt;- Zsh Default shell<br /><em>- </em>sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"<br /><em>- </em>logout and login
 ```
 
-Vamos agora instalar o [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh){ariaLabel="oh-my-zsh (abre num novo separador)" rel="noreferrer,noopener"}, que se trata de temas para a shell.
+Vamos agora instalar o [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh){ariaLabel="oh-my-zsh (abre num novo separador)"}, que se trata de temas para a shell.
 
 ```bash
 
