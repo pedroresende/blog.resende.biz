@@ -16,7 +16,7 @@ tags:
   - php
 ---
 
-Para poderem ter o php 8.4 no Ubuntu 24.04, terão de utilizar um repositório de terceiros, neste caso do [ondrej](https://launchpad.net/~ondrej/+archive/ubuntu/php){.underline rel="noreferrer,noopener"}.
+Para poderem ter o php 8.4 no Ubuntu 24.04, terão de utilizar um repositório de terceiros, neste caso do [ondrej](https://launchpad.net/~ondrej/+archive/ubuntu/php){.underline}.
 
 Vamos então começar, para tal vamos actualizar a lista de repositórios, executando:
 
