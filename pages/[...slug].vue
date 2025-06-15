@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { onMounted } from "vue"
 import { cleanUpDate } from "~/lib/cleanUpDate"
 const route = useRoute()
 

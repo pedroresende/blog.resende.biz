@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue"
 import type { Post } from "~/components/PostList.vue"
 const numberOfPosts = ref(10)
 
