@@ -22,12 +22,12 @@ const { data: doc } = await useAsyncData(route.path, () => {
 })
 
 useHead({
-  title: doc.value.title,
+  title: doc?.value?.title,
   meta: [
     {
       hid: "description",
       name: "description",
-      content: doc.value.title
+      content: doc?.value?.title
     }
   ]
 })
