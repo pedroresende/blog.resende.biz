@@ -40,7 +40,7 @@ onMounted(() => {
 
 <template>
   <div class="max-w-5xl min-h-screen flex justify-center mx-auto">
-    <main class="w-full">
+    <main class="w-full min-h-full dark:bg-gray-100">
       <Header />
       <article
         class="px-6 lg:py-24 mx-auto space-y-12 dark:bg-gray-100 dark:text-gray-900"
@@ -79,11 +79,10 @@ onMounted(() => {
         <DisqusComments identifier="{{route.params.slug}}" />
         <Author :author="doc?.meta.author" />
       </article>
-      <article
-        class="px-6 lg:py-24 mx-auto space-y-12 dark:bg-gray-100 dark:text-gray-900"
-        v-else
-      >
-        <h1 class="text-4xl font-bold leading-tight md:text-5xl text-center">
+      <article class="px-6 lg:py-24 mx-auto dark:text-gray-900" v-else>
+        <h1
+          class="text-4xl font-bold leading-tight md:text-5xl text-center py-30"
+        >
           404 - Documento não encontrado
         </h1>
         <DisqusComments identifier="{{route.params.slug}}" />
