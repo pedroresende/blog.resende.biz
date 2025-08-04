@@ -1,28 +1,28 @@
 <script setup lang="ts">
-import { cleanUpDate } from "~/lib/cleanUpDate"
+import { cleanUpDate } from "~/lib/cleanUpDate";
 export interface Post {
-  slug: string
-  title: string
-  description: string
-  date: string
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
   meta: {
-    permalink: string
-    tags: string[]
-  }
+    permalink: string;
+    tags: string[];
+  };
 }
 interface Props {
-  posts: Post[]
-  numberOfPosts: number
+  posts: Post[];
+  numberOfPosts: number;
 }
-const props = defineProps<Props>()
+const props = defineProps<Props>();
 
 const filteredPosts = computed(() => {
-  return props.posts.slice(0, props.numberOfPosts)
-})
+  return props.posts.slice(0, props.numberOfPosts);
+});
 </script>
 
 <template>
-  <article class="pt-4" v-for="(post, index) in filteredPosts" :key="post.slug">
+  <article class="pt-4" v-for="post in filteredPosts" :key="post.slug">
     <h2 class="text-xl mb-2">
       <nuxt-link :to="`${post.meta.permalink}`" class="hover:text-green-700">
         {{ post.title }}
