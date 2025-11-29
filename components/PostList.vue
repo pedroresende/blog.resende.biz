@@ -21,11 +21,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const filteredPosts = computed(() => {
-  return props.posts
-    .sort((a, b) => {
-      return new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime()
-    })
-    .slice(0, props.numberOfPosts)
+  return props.posts.slice(0, props.numberOfPosts)
 })
 </script>
 
