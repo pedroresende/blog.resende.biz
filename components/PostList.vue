@@ -1,24 +1,32 @@
 <script setup lang="ts">
-import { cleanUpDate } from "~/lib/cleanUpDate";
+import { cleanUpDate } from "~/lib/cleanUpDate"
+
 export interface Post {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
+  slug: string
+  title: string
+  description: string
+  date: string
   meta: {
-    permalink: string;
-    tags: string[];
-  };
+    permalink: string
+    tags: string[]
+    date: string
+  }
 }
+
 interface Props {
-  posts: Post[];
-  numberOfPosts: number;
+  posts: Post[]
+  numberOfPosts: number
 }
-const props = defineProps<Props>();
+
+const props = defineProps<Props>()
 
 const filteredPosts = computed(() => {
-  return props.posts.slice(0, props.numberOfPosts);
-});
+  return props.posts
+    .sort((a, b) => {
+      return new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime()
+    })
+    .slice(0, props.numberOfPosts)
+})
 </script>
 
 <template>
