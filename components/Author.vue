@@ -13,19 +13,11 @@ const props = defineProps(["author"])
       <div class="flex flex-col">
         <h4 class="text-lg font-semibold">{{ props?.author?.name }}</h4>
         <p class="dark:text-gray-600 mb-4">
-          With over two decades of experience as a Full Stack Developer, I have
-          journeyed through diverse facets of software development. Commencing
-          with the creation of compact institutional websites, I progressed to
-          crafting portals for insurance brokers and contributed to substantial
-          projects for renowned companies such as MS Amlin. My expertise
-          expanded further by delving into product development for Advertiser
-          Kwanko and collaborating with startups in their pivotal ramp-up
-          stages. Notably, I've been involved in architecting extensive
-          e-commerce solutions for global enterprises like Wayfair.
+
+With over two decades of experience as a Full Stack Developer, I have journeyed through diverse facets of software development. Commencing with the creation of compact institutional websites, I progressed to crafting portals for insurance brokers and contributed to substantial projects for renowned companies such as MS Amlin. My expertise expanded further by delving into product development for Advertiser Kwanko and collaborating with startups in their pivotal ramp-up stages. Notably, I've been involved in architecting extensive e-commerce solutions for global enterprises like Wayfair and Strategyzer.
         </p>
         <p class="dark:text-gray-600">
-          I currently serve as the Tech Lead at Emergn, contributing to the
-          establishment and advancement of the Strategyzer client.
+I currently serve as the Tech Lead at Emergn, contributing to the establishment and advancement of the Praxis by Emergn product.
         </p>
       </div>
     </div>
