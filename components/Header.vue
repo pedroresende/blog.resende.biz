@@ -1,6 +1,6 @@
 <template>
   <header class="p-4 bg-gray-100 text-gray-800">
-    <div class="container flex justify-between h-16 ml-4 lg:mx-auto">
+    <div class="container flex justify-between items-center h-16 ml-4 lg:mx-auto">
       <nuxt-link
         rel="noopener noreferrer"
         to="/"
@@ -34,6 +34,8 @@
 
         Blog.resende.biz
       </nuxt-link>
+      
+      <Search />
     </div>
   </header>
 </template>
