@@ -45,13 +45,18 @@ const loadPosts = async () => {
   try {
     const response = await $fetch("/api/search/posts")
     posts.value = response.data || []
+    sessionStorage.setItem("posts", JSON.stringify(response.data))
   } catch (error) {
     console.error("Failed to load posts for search:", error)
   }
 }
 
 onMounted(() => {
-  loadPosts()
+  if (sessionStorage.getItem("posts")) {
+    posts.value = JSON.parse(sessionStorage.getItem("posts"))
+  } else {
+    loadPosts()
+  }
 })
 </script>
 
@@ -64,7 +69,7 @@ onMounted(() => {
         @focus="showResults = true"
         @blur="hideResults"
         type="text"
-        placeholder="Search posts..."
+        placeholder="Procurar..."
         class="w-64 px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
       />
       <svg
@@ -105,7 +110,7 @@ onMounted(() => {
       class="absolute top-full mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg z-50"
     >
       <div class="px-4 py-3 text-gray-500 text-sm">
-        No posts found for "{{ searchQuery }}"
+        Elementos não encontrados para "{{ searchQuery }}"
       </div>
     </div>
   </div>
