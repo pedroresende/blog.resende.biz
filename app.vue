@@ -14,7 +14,9 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div
+    class="min-h-screen bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-200"
+  >
     <NuxtPage />
     <NuxtRouteAnnouncer />
   </div>

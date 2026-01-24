@@ -40,12 +40,9 @@ onMounted(() => {
 
 <template>
   <div class="max-w-5xl min-h-screen flex justify-center mx-auto">
-    <main class="w-full min-h-full dark:bg-gray-100">
+    <main class="w-full min-h-full bg-gray-100 dark:bg-gray-900">
       <Header />
-      <article
-        class="px-6 lg:py-24 mx-auto space-y-12 dark:bg-gray-100 dark:text-gray-900"
-        v-if="doc"
-      >
+      <article class="px-6 lg:py-24 mx-auto space-y-12" v-if="doc">
         <div class="w-full mx-auto space-y-4 text-center">
           <p class="text-xs font-semibold tracking-wider uppercase">
             {{ getTags(doc.meta.tags) }}

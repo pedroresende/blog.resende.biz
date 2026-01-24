@@ -12,12 +12,21 @@ const props = defineProps(["author"])
       />
       <div class="flex flex-col">
         <h4 class="text-lg font-semibold">{{ props?.author?.name }}</h4>
-        <p class="dark:text-gray-600 mb-4">
-
-With over two decades of experience as a Full Stack Developer, I have journeyed through diverse facets of software development. Commencing with the creation of compact institutional websites, I progressed to crafting portals for insurance brokers and contributed to substantial projects for renowned companies such as MS Amlin. My expertise expanded further by delving into product development for Advertiser Kwanko and collaborating with startups in their pivotal ramp-up stages. Notably, I've been involved in architecting extensive e-commerce solutions for global enterprises like Wayfair and Strategyzer.
+        <p class="dark:text-white mb-4">
+          With over two decades of experience as a Full Stack Developer, I have
+          journeyed through diverse facets of software development. Commencing
+          with the creation of compact institutional websites, I progressed to
+          crafting portals for insurance brokers and contributed to substantial
+          projects for renowned companies such as MS Amlin. My expertise
+          expanded further by delving into product development for Advertiser
+          Kwanko and collaborating with startups in their pivotal ramp-up
+          stages. Notably, I've been involved in architecting extensive
+          e-commerce solutions for global enterprises like Wayfair and
+          Strategyzer.
         </p>
-        <p class="dark:text-gray-600">
-I currently serve as the Tech Lead at Emergn, contributing to the establishment and advancement of the Praxis by Emergn product.
+        <p class="dark:text-white">
+          I currently serve as the Tech Lead at Emergn, contributing to the
+          establishment and advancement of the Praxis by Emergn product.
         </p>
       </div>
     </div>
@@ -26,7 +35,7 @@ I currently serve as the Tech Lead at Emergn, contributing to the establishment 
         rel="noopener noreferrer"
         href="https://github.com/pedroresende"
         aria-label="GitHub"
-        class="p-2 rounded-md dark:text-gray-800 dark:hover:text-green-700"
+        class="p-2 rounded-md dark:text-white dark:hover:text-green-700"
       >
         <svg
           fill="currentColor"
@@ -45,7 +54,7 @@ I currently serve as the Tech Lead at Emergn, contributing to the establishment 
         rel="noopener noreferrer"
         href="https://x.com/pmmresende"
         aria-label="X"
-        class="p-2 rounded-md dark:text-gray-800 dark:hover:text-green-700"
+        class="p-2 rounded-md dark:text-white dark:hover:text-green-700"
       >
         <svg
           fill="currentColor"
@@ -61,7 +70,7 @@ I currently serve as the Tech Lead at Emergn, contributing to the establishment 
         </svg>
       </a>
       <a
-        class="p-2 rounded-md dark:text-gray-800 dark:hover:text-green-700"
+        class="p-2 rounded-md dark:text-white dark:hover:text-green-700"
         aria-label="linkedin"
         rel="noopener noreferrer"
         target="_blank"

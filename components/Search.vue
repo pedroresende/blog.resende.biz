@@ -70,10 +70,10 @@ onMounted(() => {
         @blur="hideResults"
         type="text"
         placeholder="Procurar..."
-        class="w-64 px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        class="w-64 px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
       />
       <svg
-        class="absolute right-3 top-2.5 h-5 w-5 text-gray-400"
+        class="absolute right-3 top-2.5 h-5 w-5 text-gray-400 dark:text-gray-500"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -89,17 +89,17 @@ onMounted(() => {
 
     <div
       v-if="showResults && searchResults.length > 0"
-      class="absolute top-full mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto"
+      class="absolute top-full mt-2 w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto transition-colors duration-200"
     >
       <a
         v-for="post in searchResults"
         :key="post.path"
         :href="post.path"
         @click="selectPost(post)"
-        class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 cursor-pointer"
+        class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 border-b border-gray-100 dark:border-gray-600 last:border-b-0 cursor-pointer transition-colors duration-150"
       >
-        <h3 class="font-semibold text-gray-800 text-sm">{{ post.title }}</h3>
-        <p class="text-gray-600 text-xs mt-1 line-clamp-2">
+        <h3 class="font-semibold text-gray-800 dark:text-gray-200 text-sm">{{ post.title }}</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-xs mt-1 line-clamp-2">
           {{ post.description }}
         </p>
       </a>
@@ -107,9 +107,9 @@ onMounted(() => {
 
     <div
       v-if="showResults && searchQuery && searchResults.length === 0"
-      class="absolute top-full mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg z-50"
+      class="absolute top-full mt-2 w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg z-50 transition-colors duration-200"
     >
-      <div class="px-4 py-3 text-gray-500 text-sm">
+      <div class="px-4 py-3 text-gray-500 dark:text-gray-400 text-sm">
         Elementos não encontrados para "{{ searchQuery }}"
       </div>
     </div>
