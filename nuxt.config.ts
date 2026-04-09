@@ -49,6 +49,10 @@ export default defineNuxtConfig({
     debug: process.env.node === "development",
   },
   nitro: {
+    externals: {
+      inline: ["@nuxt/content", "better-sqlite3"],
+    },
+    preset: "cloudflare-pages",
     prerender: {
       autoSubfolderIndex: false,
       routes: ["/sitemap.xml"],
