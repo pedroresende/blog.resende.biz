@@ -1,25 +1,25 @@
 <script lang="ts" setup>
-import { cleanUpDate } from "~/lib/cleanUpDate"
-const route = useRoute()
+import { cleanUpDate } from "~/lib/cleanUpDate";
+const route = useRoute();
 
-const getTags = (tags: string[]) => tags?.map((tag) => `#${tag}`).join(" ")
+const getTags = (tags: string[]) => tags?.map((tag) => `#${tag}`).join(" ");
 
 interface Content {
   meta: {
-    title: string
-    tags: string[]
+    title: string;
+    tags: string[];
     author: {
-      name: string
-    }
-    date: string
-    coverImage?: string
-    categories?: string[]
-  }
+      name: string;
+    };
+    date: string;
+    coverImage?: string;
+    categories?: string[];
+  };
 }
 
 const { data: doc } = await useAsyncData(route.path, () => {
-  return queryCollection<any>("content").path(route.path).first()
-})
+  return queryCollection<any>("content").path(route.path).first();
+});
 
 useHead({
   title: doc?.value?.title,
@@ -27,15 +27,15 @@ useHead({
     {
       hid: "description",
       name: "description",
-      content: doc?.value?.title
-    }
-  ]
-})
+      content: doc?.value?.title,
+    },
+  ],
+});
 
 onMounted(() => {
-  const { $Prism } = useNuxtApp()
-  $Prism.highlightAll()
-})
+  const { $Prism } = useNuxtApp();
+  $Prism.highlightAll();
+});
 </script>
 
 <template>
@@ -52,21 +52,21 @@ onMounted(() => {
           </h1>
           <p class="text-sm">
             por
-            <a
+            <nuxt-link
               rel="noopener noreferrer"
-              href="https://www.pedro.resende.biz"
+              to="https://www.pedro.resende.biz"
               target="_blank"
               class="underline text-green-700"
             >
               <span itemprop="name">{{ doc.meta.author.name }}</span>
-            </a>
+            </nuxt-link>
             em
             {{ cleanUpDate(doc.meta.date) }}
           </p>
         </div>
 
         <div v-if="doc.meta.coverImage">
-          <img
+          <NuxtImg
             :src="doc.meta.coverImage"
             :alt="doc.meta.title"
             class="w-full h-96 object-cover"
