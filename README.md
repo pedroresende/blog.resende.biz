@@ -1,75 +1,55 @@
-# Nuxt 3 Minimal Starter
+# blog.resende.biz
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Personal blog by [Pedro Resende](https://www.pedro.resende.biz), built with Nuxt and Nuxt Content.
+
+## Tech Stack
+
+- **Framework:** Nuxt 4
+- **Content:** Nuxt Content v3 (markdown-based blog posts in Portuguese)
+- **Styling:** Tailwind CSS v4
+- **Modules:** Nuxt Image, nuxt-delay-hydration
+- **Search:** Client-side search via `/api/search/posts` endpoint
+- **Comments:** Disqus integration
+- **Syntax Highlighting:** Prism.js
+- **Sitemap:** Auto-generated at `/sitemap.xml`
+- **Deployment:** Cloudflare Pages (with `_routes.json`)
+- **Runtime:** Node.js 22
+- **Package Manager:** pnpm
 
 ## Setup
 
-Make sure to install the dependencies:
-
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## Development
 
-Start the development server on `http://localhost:3000`:
+Start the dev server at `http://localhost:3000`:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+pnpm dev
 ```
 
 ## Production
 
-Build the application for production:
+Build for production:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+pnpm build
 ```
 
-Locally preview production build:
+Preview the build locally:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+pnpm preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### Deploy to Cloudflare Pages
+
+```bash
+pnpm build:cloudflare
+```
+
+## License
+
+© Pedro Resende — All rights reserved.
