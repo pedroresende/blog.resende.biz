@@ -1,63 +1,87 @@
-<script setup>
-import { ref, computed, onMounted } from "vue"
-import { useRouter } from "#app"
+<script setup lang="ts">
+import { ref, computed, onMounted } from "vue";
+import { useRouter } from "#app";
 
-const router = useRouter()
-const searchQuery = ref("")
-const posts = ref([])
-const showResults = ref(false)
+const router = useRouter();
+const searchQuery = ref("");
+const posts = ref([]);
+const showResults = ref(false);
+const hoveredIndex = ref(0);
 
 const searchResults = computed(() => {
   if (!searchQuery.value.trim()) {
-    return []
+    return [];
   }
 
-  const query = searchQuery.value.toLowerCase()
+  hoveredIndex.value = 0;
+  const query = searchQuery.value.toLowerCase();
+
   return posts.value
     .filter((post) => {
       return (
         post.title?.toLowerCase().includes(query) ||
         post.description?.toLowerCase().includes(query) ||
         post.content?.toLowerCase().includes(query)
-      )
+      );
     })
-    .slice(0, 8)
-})
+    .slice(0, 8);
+});
 
 const handleSearch = () => {
-  showResults.value = true
-}
+  showResults.value = true;
+};
 
 const hideResults = () => {
   setTimeout(() => {
-    showResults.value = false
-  }, 200)
-}
+    showResults.value = false;
+  }, 200);
+};
 
-const selectPost = (post) => {
-  searchQuery.value = ""
-  showResults.value = false
-  console.log(post)
-  router.push(post.path)
-}
+const selectPost = (direction: "down" | "up") => {
+  if (hoveredIndex.value === 0) {
+    hoveredIndex.value = searchResults.value[0].id;
+    return;
+  }
+
+  const selectedPostIndex = searchResults.value.findIndex(
+    (post) => post.id === hoveredIndex.value,
+  );
+
+  if (direction === "down") {
+    hoveredIndex.value = searchResults.value[selectedPostIndex + 1]?.id || 0;
+    return;
+  }
+
+  hoveredIndex.value = searchResults.value[selectedPostIndex - 1]?.id || 0;
+};
+
+const handleOpenPost = () => {
+  const selectedPostIndex = searchResults.value.findIndex(
+    (post) => post.id === hoveredIndex.value,
+  );
+
+  const path = searchResults.value[selectedPostIndex]?.path;
+
+  router.push(path);
+};
 
 const loadPosts = async () => {
   try {
-    const response = await $fetch("/api/search/posts")
-    posts.value = response.data || []
-    sessionStorage.setItem("posts", JSON.stringify(response.data))
+    const response = await $fetch("/api/search/posts");
+    posts.value = response.data || [];
+    sessionStorage.setItem("posts", JSON.stringify(response.data));
   } catch (error) {
-    console.error("Failed to load posts for search:", error)
+    console.error("Failed to load posts for search:", error);
   }
-}
+};
 
 onMounted(() => {
   if (sessionStorage.getItem("posts")) {
-    posts.value = JSON.parse(sessionStorage.getItem("posts"))
+    posts.value = JSON.parse(sessionStorage.getItem("posts"));
   } else {
-    loadPosts()
+    loadPosts();
   }
-})
+});
 </script>
 
 <template>
@@ -68,6 +92,9 @@ onMounted(() => {
         @input="handleSearch"
         @focus="showResults = true"
         @blur="hideResults"
+        @keydown.down.prevent="selectPost('down')"
+        @keydown.up.prevent="selectPost('up')"
+        @keydown.enter.prevent="handleOpenPost"
         type="text"
         placeholder="Procurar..."
         class="w-64 px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
@@ -95,10 +122,13 @@ onMounted(() => {
         v-for="post in searchResults"
         :key="post.path"
         :href="post.path"
-        @click="selectPost(post)"
+        tabindex="0"
         class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 border-b border-gray-100 dark:border-gray-600 last:border-b-0 cursor-pointer transition-colors duration-150"
+        :class="{ 'bg-gray-50 dark:bg-gray-700': hoveredIndex === post.id }"
       >
-        <h3 class="font-semibold text-gray-800 dark:text-gray-200 text-sm">{{ post.title }}</h3>
+        <h3 class="font-semibold text-gray-800 dark:text-gray-200 text-sm">
+          {{ post.title }}
+        </h3>
         <p class="text-gray-600 dark:text-gray-400 text-xs mt-1 line-clamp-2">
           {{ post.description }}
         </p>

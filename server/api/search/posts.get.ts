@@ -16,6 +16,7 @@ export default defineEventHandler(async (event) => {
     }[] = await queryCollection(event, "content").all()
 
     const formattedPosts = posts.map((post) => ({
+      id: post.id,
       path: post.path,
       title: post.title,
       description: post.description,
