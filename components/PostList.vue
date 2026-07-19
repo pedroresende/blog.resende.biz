@@ -1,28 +1,28 @@
 <script setup lang="ts">
-import { cleanUpDate } from "~/lib/cleanUpDate"
+import { cleanUpDate } from "~/lib/cleanUpDate";
 
 export interface Post {
-  slug: string
-  title: string
-  description: string
-  date: string
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
   meta: {
-    permalink: string
-    tags: string[]
-    date: string
-  }
+    permalink: string;
+    tags: string[];
+    date: string;
+  };
 }
 
 interface Props {
-  posts: Post[]
-  numberOfPosts: number
+  posts: Post[];
+  numberOfPosts: number;
 }
 
-const props = defineProps<Props>()
+const props = defineProps<Props>();
 
 const filteredPosts = computed(() => {
-  return props.posts.slice(0, props.numberOfPosts)
-})
+  return props.posts.slice(0, props.numberOfPosts);
+});
 </script>
 
 <template>
@@ -38,7 +38,7 @@ const filteredPosts = computed(() => {
     <span class="text">
       {{ post.description }}
     </span>
-    <p class="text-sm text-green-700 mt-2">
+    <p class="text-sm text-green-700 my-2">
       <nuxt-link :to="`${post.meta.permalink}`" title="Read more">
         Continuar a Ler >
       </nuxt-link>
