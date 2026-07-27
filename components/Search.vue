@@ -7,6 +7,7 @@ const searchQuery = ref("");
 const posts = ref([]);
 const showResults = ref(false);
 const hoveredIndex = ref(0);
+const containerEl = ref(null);
 
 const searchResults = computed(() => {
   if (!searchQuery.value.trim()) {
@@ -49,9 +50,21 @@ const selectPost = (direction: "down" | "up") => {
 
   if (direction === "down") {
     hoveredIndex.value = searchResults.value[selectedPostIndex + 1]?.id || 0;
+    containerEl.value?.scrollTo({
+      top: document.getElementById(
+        searchResults.value[selectedPostIndex + 1]?.id,
+      )?.offsetTop,
+      behavior: "smooth",
+    });
+
     return;
   }
 
+  containerEl.value?.scrollTo({
+    top: document.getElementById(searchResults.value[selectedPostIndex - 1]?.id)
+      ?.offsetTop,
+    behavior: "smooth",
+  });
   hoveredIndex.value = searchResults.value[selectedPostIndex - 1]?.id || 0;
 };
 
@@ -116,12 +129,14 @@ onMounted(() => {
 
     <div
       v-if="showResults && searchResults.length > 0"
+      ref="containerEl"
       class="absolute top-full mt-2 w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto transition-colors duration-200"
     >
       <a
         v-for="post in searchResults"
         :key="post.path"
         :href="post.path"
+        :id="post.id"
         tabindex="0"
         class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 border-b border-gray-100 dark:border-gray-600 last:border-b-0 cursor-pointer transition-colors duration-150"
         :class="{ 'bg-gray-50 dark:bg-gray-700': hoveredIndex === post.id }"
