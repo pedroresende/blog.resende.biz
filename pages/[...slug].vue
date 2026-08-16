@@ -73,7 +73,7 @@ onMounted(() => {
           />
         </div>
         <ContentRenderer :value="doc" />
-        <DisqusComments identifier="{{route.params.slug}}" />
+        <DisqusComments :identifier="route.params.slug" />
         <Author :author="doc?.meta.author" />
       </article>
       <article class="px-6 lg:py-24 mx-auto dark:text-gray-900" v-else>
@@ -82,7 +82,7 @@ onMounted(() => {
         >
           404 - Documento não encontrado
         </h1>
-        <DisqusComments identifier="{{route.params.slug}}" />
+        <DisqusComments :identifier="route.params.slug" />
         <Author author="Pedro Resende" />
       </article>
     </main>
