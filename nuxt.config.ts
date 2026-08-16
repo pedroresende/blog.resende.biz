@@ -44,7 +44,19 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/css/main.css"],
-  modules: ["@nuxt/content", "@nuxt/image", "nuxt-delay-hydration"],
+  modules: [
+    "@nuxt/content",
+    "@nuxt/image",
+    "nuxt-delay-hydration",
+    "nuxt-disqus",
+  ],
+  disqus: {
+    shortname: "blogresendebiz",
+    siteName: "Blog Resende",
+    apiKey: "blogresendebiz",
+    lazy: true,
+    ignore: ["/admin", "/tags", "/categories"],
+  },
   delayHydration: {
     debug: process.env.node === "development",
   },
